@@ -22,5 +22,6 @@ test('Incrementar button adds 1 to the counter', async ({ page }) => {
   const expectedResult = counterNumberAfterIncrement + 1;
 
   // Expects an increment of 1.
-  await expect(counterNumberBeforeIncrement).toStrictEqual(expectedResult)
+  expect(counterNumberBeforeIncrement).toStrictEqual(expectedResult)
 });
+
