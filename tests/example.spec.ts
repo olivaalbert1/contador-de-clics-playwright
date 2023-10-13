@@ -30,14 +30,14 @@ test('Decrementar button decreases 1 to the counter', async ({ page }) => {
 
   const counterNumberAfterDecrement = parseInt(await page.getByTestId('contador').innerText())
 
-  // Click the incrementar button.
+  // Click the decrementar button.
   await page.getByRole('button', { name: 'Decrementar' }).click()
 
   const counterNumberBeforeDecrement = parseInt(await page.getByTestId('contador').innerText())
 
   const expectedResult = counterNumberAfterDecrement - 1;
 
-  // Expects an increment of 1.
+  // Expects an decrement of 1.
   expect(counterNumberBeforeDecrement).toStrictEqual(expectedResult)
 });
 
