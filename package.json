@@ -1,5 +1,5 @@
 {
-  "name": "contador-de-clics-playwright",
+  "name": "contador-de-clics",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
