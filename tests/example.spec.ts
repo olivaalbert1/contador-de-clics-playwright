@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { randomInt } from 'crypto';
 
 test('The counter starts at 0', async ({ page }) => {
   await page.goto('http://localhost:3000/')
@@ -39,5 +40,23 @@ test('Decrementar button decreases 1 to the counter', async ({ page }) => {
 
   // Expects an decrement of 1.
   expect(counterNumberBeforeDecrement).toStrictEqual(expectedResult)
+});
+
+test('Reset button resets the counter to initial state', async ({ page }) => {
+  await page.goto('http://localhost:3000/')
+
+  const initialStatus = parseInt(await page.getByTestId('contador').innerText())
+
+  const randomNumberClicks = randomInt(100)
+
+  await page.getByRole('button', { name: 'Decrementar' }).click({clickCount:randomNumberClicks})
+
+  // Click the reset button.
+  await page.getByRole('button', { name: 'Reiniciar' }).click()
+
+  const counterNumberBeforeDecrement = parseInt(await page.getByTestId('contador').innerText())
+
+  // Expects the counter to initial state.
+  expect(counterNumberBeforeDecrement).toStrictEqual(initialStatus)
 });
 
