@@ -60,3 +60,6 @@ test('Reset button resets the counter to initial state', async ({ page }) => {
   expect(counterNumberBeforeDecrement).toStrictEqual(initialStatus)
 });
 
+test.skip('I do not really want run this test',async({page}) => {
+  expect(1).toBe(1)
+})
