@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Testing contador-de-clics app with Playwright
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
